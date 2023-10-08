@@ -1,39 +1,38 @@
+import "./Post.css";
+import { Link } from "react-router-dom";
 
+export default function Post({ post }) {
 
+  const PF = "http://localhost:5000/images/";
 
-import "./Post.css"
-
-export default function Post() {
   return (
-    <div className="post">
+    <div className="post"> 
+      {post.photo && (
         <img
-            className="postImg"
-            src="https://picsum.photos/200" 
-            alt="postImg" 
+          className="postImg"
+          // src="https://picsum.photos/200"
+          src={PF + post.photo}
         />
+      )}
 
-        <div className="postInfo">
-            <div className="postCats">
-                <span className="postCat">Music</span>
-                <span className="postCat">Life</span>
-            </div>
-            <span className="postTitle">Lorem Title </span>
-            <hr/>
-            <span className="postDate">1hr ago</span>
+      <div className="postInfo">
+        <div className="postCats">
+          {post.categories.map((cat, idx) => (
+            <span className="postCat" key={idx}>
+              {cat}
+            </span>
+          ))}
         </div>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
+        <hr />
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
+      </div>
 
-        <p className="postDesc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            obcaecati maxime nemo, facilis natus magnam neque quidem quasi
-            corporis  eligendi deleniti voluptatibus, rerum in doloribus? Nihil, esse.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            obcaecati maxime nemo, facilis natus magnam neque quidem quasi
-            corporis  eligendi deleniti voluptatibus, rerum in doloribus? Nihil, esse.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            obcaecati maxime nemo, facilis natus magnam neque quidem quasi
-            corporis  eligendi deleniti voluptatibus, rerum in doloribus? Nihil, esse.
-        </p>
-
+      <p className="postDesc">{post.desc}</p>
     </div>
-  )
+  );
 }

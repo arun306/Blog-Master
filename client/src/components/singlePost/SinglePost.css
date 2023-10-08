@@ -1,14 +1,12 @@
-
-
-
-.singlePost{
+.singlePost {
     flex: 9;
 }
 
 
 .singlePostWrapper {
-    padding: 15px;
-    padding-right: 0;
+    padding: 15px 0 15px 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .singlePostImg {
@@ -23,6 +21,21 @@
     margin: 10px;
     font-family: 'Lora', serif;
     font-size: 28px;
+}
+
+
+.singlePostTitleInput {
+    text-align: center;
+    margin: 10px;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    color: grey;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.singlePostTitleInput:focus {
+    outline: none;
 }
 
 .singlePostEdit {
@@ -45,8 +58,8 @@
 }
 
 
-.singlePostInfo{
-    margin-bottom: 20px;  
+.singlePostInfo {
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
@@ -59,10 +72,39 @@
     color: #666;
     font-size: 18px;
     line-height: 25px;
+    /* whiteSpace: 'pre-wrap' */
+    white-space: pre-wrap;
+}
+
+.singlePostDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+    /* whiteSpace: 'pre-wrap' */
+    white-space: pre-wrap;
+    margin: 20px;
+    height: 100vh;
+}
+.singlePostDescInput:focus {
+    outline: none;
 }
 
 .singlePostDesc::first-letter {
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
+}
+
+
+.singlePostButton {
+    width: 100px;
+    border: none;
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
 }

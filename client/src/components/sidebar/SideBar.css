@@ -1,3 +1,4 @@
+/* Media query to hide the sidebar on small screens */
 
 
 .sidebar {
@@ -14,7 +15,6 @@
 .sidebarImg {
     height: 200px;
 }
-
 
 
 .sidebarItem {
@@ -49,22 +49,29 @@
     margin-bottom: 30px;
 }
 
-.sidebarListItem{
+.sidebarListItem {
     display: inline-block;
     width: 50%;
     margin-top: 10px;
     cursor: pointer;
 }
 
-.sidebarSocial{
+.sidebarSocial {
     margin-top: 15px;
     width: 250px;
     display: flex;
     justify-content: center;
 }
 
-.sidebarIcon{
+.sidebarIcon {
     margin-left: 10px;
     font-size: 16px;
     cursor: pointer;
+}
+
+
+@media screen and(max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
 }
